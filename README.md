@@ -3,7 +3,9 @@
 Svelte Final Form is a thin Svelte wrapper for [Final Form](https://final-form.org)
 
 ✅ Zero dependencies
+
 ✅ Only peer dependencies: Svelte and [🏁 Final Form](https://github.com/final-form/final-form#-final-form)
+
 ✅ Opt-in subscriptions - only update on the state you need!
 
 ---
