@@ -1,0 +1,44 @@
+{
+  "name": "svelte-final-form",
+  "version": "1.0.0",
+  "description": "🏁 High performance subscription-based form state management for Svelte",
+  "svelte": "src/index.js",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -cw",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solilin/svelte-final-form.git"
+  },
+  "keywords": [
+    "svelte-final-form",
+    "final-form",
+    "forms",
+    "validation",
+    "svelte"
+  ],
+  "author": "Alexey Solilin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/solilin/svelte-final-form/issues"
+  },
+  "homepage": "https://github.com/solilin/svelte-final-form#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "final-form": "^4.19.1",
+    "prettier": "^2.0.5",
+    "prettier-plugin-svelte": "^1.1.0",
+    "rollup": "^2.8.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.2.1",
+    "svelte": "^3.22.2"
+  }
+}
