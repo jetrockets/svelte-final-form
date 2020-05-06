@@ -31,7 +31,7 @@
           onBlur: blur,
           onChange: change,
           onFocus: focus,
-          value
+          value: value === undefined ? "" : value
         };
       },
       subscription
