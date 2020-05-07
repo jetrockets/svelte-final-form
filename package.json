@@ -24,9 +24,9 @@
   "author": "Alexey Solilin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/solilin/svelte-final-form/issues"
+    "url": "https://github.com/jetrockets/svelte-final-form/issues"
   },
-  "homepage": "https://github.com/solilin/svelte-final-form#readme",
+  "homepage": "https://github.com/jetrockets/svelte-final-form#readme",
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "babel-loader": "^8.1.0",
