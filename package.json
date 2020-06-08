@@ -1,6 +1,6 @@
 {
   "name": "svelte-final-form",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "🏁 High performance subscription-based form state management for Svelte",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
