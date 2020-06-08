@@ -3,8 +3,12 @@
   import { fieldSubscriptionItems } from "final-form";
   import { FORM } from "./Form.svelte";
 
+  const defaultParse = (value) => value === '' ? undefined : value;
+
   export let name,
     subscription = getFieldSubscriptionItems();
+    validate = undefined,
+    parse = defaultParse;
 
   let meta = {};
   let input = {};
@@ -29,12 +33,17 @@
         input = {
           name,
           onBlur: blur,
-          onChange: change,
+          onChange: (val) => {
+            change(parse(val, name));
+          },
           onFocus: focus,
           value: value === undefined ? "" : value
         };
       },
-      subscription
+      subscription,
+      {
+        getValidator: () => validate,
+      }
     );
   });
 
