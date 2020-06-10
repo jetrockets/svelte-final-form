@@ -6,7 +6,7 @@
   const defaultParse = (value) => value === '' ? undefined : value;
 
   export let name,
-    subscription = getFieldSubscriptionItems();
+    subscription = getFieldSubscriptionItems(),
     validate = undefined,
     parse = defaultParse;
 
