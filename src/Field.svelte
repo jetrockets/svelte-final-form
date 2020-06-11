@@ -3,7 +3,7 @@
   import { fieldSubscriptionItems } from "final-form";
   import { FORM } from "./Form.svelte";
 
-  const defaultParse = (value) => value === '' ? undefined : value;
+  const defaultParse = (value) => (value === "" ? undefined : value);
 
   export let name,
     subscription = getFieldSubscriptionItems(),
@@ -18,14 +18,14 @@
 
   if (process.env.NODE_ENV !== "production" && !form) {
     throw new Error(
-      "Could not find svelte-final-form context value. Please ensure that your Field is inside the Form component."
+      "Could not find svelte-final-form context value. Please ensure that your Field is inside the Form component.",
     );
   }
 
   onMount(() => {
     unsubscribe = form.registerField(
       name,
-      fieldState => {
+      (fieldState) => {
         const { blur, change, focus, value, ...fieldMeta } = fieldState;
 
         meta = fieldMeta;
@@ -37,13 +37,13 @@
             change(parse(val, name));
           },
           onFocus: focus,
-          value: value === undefined ? "" : value
+          value: value === undefined ? "" : value,
         };
       },
       subscription,
       {
         getValidator: () => validate,
-      }
+      },
     );
   });
 
