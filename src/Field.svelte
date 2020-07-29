@@ -48,7 +48,7 @@
   });
 
   onDestroy(() => {
-    unsubscribe();
+    unsubscribe && unsubscribe();
   });
 
   function getFieldSubscriptionItems() {
