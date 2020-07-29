@@ -27,7 +27,7 @@
   });
 
   onDestroy(() => {
-    unsubscribe();
+    unsubscribe && unsubscribe();
   });
 
   function getFormSubscriptionItems() {
