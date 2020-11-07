@@ -5,7 +5,8 @@
 
   export let name,
     subscription = getFieldSubscriptionItems(),
-    validate = undefined;
+    validate = undefined,
+    parse = undefined;
 
   let meta = {};
   let input = {};
@@ -32,7 +33,7 @@
         input = {
           name,
           onBlur: blur,
-          onChange: (val) => change(val),
+          onChange: (val) => change(parse ? parse(val) : val),
           onFocus: focus,
           value,
         };
