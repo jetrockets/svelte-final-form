@@ -1,5 +1,5 @@
 import { SvelteComponent } from "svelte";
-import type { FieldSubscription, FormState, FormSubscription } from "final-form";
+import { FieldSubscription, FormState, FormSubscription } from "final-form";
 
 export class Form<T> extends SvelteComponent {
   $$prop_def: {
