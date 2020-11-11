@@ -4,10 +4,11 @@
 
 <script>
   import { onDestroy, onMount, setContext } from "svelte";
-  import { createForm, formSubscriptionItems } from "final-form";
+  import { createForm } from "final-form";
 
   import whenValueChanges from "./whenValueChanges";
   import shallowEqual from "./shallowEqual";
+  import { getFormSubscriptionItems } from "./getFormSubscriptions";
 
   export let subscription = getFormSubscriptionItems();
   export let initialValues;
@@ -29,13 +30,6 @@
   onDestroy(() => {
     unsubscribe && unsubscribe();
   });
-
-  function getFormSubscriptionItems() {
-    return formSubscriptionItems.reduce((result, key) => {
-      result[key] = true;
-      return result;
-    }, {});
-  }
 
   const whenInitialValuesChanges = whenValueChanges(
     initialValues,

@@ -21,7 +21,7 @@
   }
 
   $: {
-    unsubscribe?.();
+    unsubscribe && unsubscribe();
 
     unsubscribe = form.registerField(
       name,
@@ -46,7 +46,7 @@
   }
 
   onDestroy(() => {
-    unsubscribe?.();
+    unsubscribe && unsubscribe();
   });
 
   function getFieldSubscriptionItems() {
