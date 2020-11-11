@@ -13,3 +13,16 @@ export class Form<T> extends SvelteComponent {
 export class Field extends SvelteComponent {
   $$prop_def: { name: string; subscription?: FieldSubscription };
 }
+
+/*
+  Formspy can also render a slot, and exports formState to be used by it:
+  <FormSpy let:formState>
+    {...Render something, using formState :)...}
+  </FormSpy>
+*/
+export class FormSpy<T> extends SvelteComponent {
+  $$prop_def: {
+    subscription?: FormSubscription;
+    onChange?: (formState: FormState<T>) => void;
+  };
+}
