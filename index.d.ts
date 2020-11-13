@@ -1,7 +1,7 @@
 import { SvelteComponent } from "svelte";
 import { FieldSubscription, FormState, FormSubscription } from "final-form";
 
-export class Form<T> extends SvelteComponent {
+export class Form<T extends object = any> extends SvelteComponent {
   $$prop_def: {
     onSubmit: (vals: T) => void | Promise<void>;
     subscription?: FormSubscription;
@@ -20,7 +20,7 @@ export class Field extends SvelteComponent {
     {...Render something, using formState :)...}
   </FormSpy>
 */
-export class FormSpy<T> extends SvelteComponent {
+export class FormSpy<T extends object = any> extends SvelteComponent {
   $$prop_def: {
     subscription?: FormSubscription;
     onChange?: (formState: FormState<T>) => void;
