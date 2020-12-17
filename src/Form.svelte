@@ -12,8 +12,8 @@
   export let subscription;
   export let initialValues;
   export let initialValuesEqual;
+  export let formStore = readableForm({ initialValues, ...$$restProps }, initialValuesEqual);
 
-  const formStore = readableForm({ initialValues, ...$$restProps }, initialValuesEqual);
   const formStateStore = readableFormState(subscription, $formStore);
 
   setContext(FORM_STORE, formStore);
