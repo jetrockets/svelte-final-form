@@ -1,7 +1,5 @@
 import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
-import sveltePreprocess from 'svelte-preprocess';
-import typescript from '@rollup/plugin-typescript';
 import pkg from "./package.json";
 
 export default [
@@ -12,11 +10,8 @@ export default [
       { file: pkg.main, format: "umd", name: pkg.name },
     ],
     plugins: [
-      svelte({
-        preprocess: sveltePreprocess()
-      }),
       resolve(), 
-      typescript(),
+      svelte(),
     ],
   },
 ];
