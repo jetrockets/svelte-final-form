@@ -1,6 +1,8 @@
 import { SvelteComponent } from "svelte";
 import { FieldSubscription, FormState, FormSubscription } from "final-form";
 
+export * from './src/store';
+
 export class Form<T extends object = any> extends SvelteComponent {
   $$prop_def: {
     onSubmit: (vals: T) => void | Promise<void>;
