@@ -144,6 +144,13 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.9.6.tgz#3b1bbb30dabe600cd72db58720998376ff653bc7"
   integrity sha512-AoeIEJn8vt+d/6+PXDRPaksYhnlbMIiejioBZvvMQsOjW/JYK6k/0dKnvvP3EhK5GfMBWDPtrxRtegWdAcdq9Q==
 
+"@babel/runtime@^7.10.0":
+  version "7.12.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
+  integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.8.3":
   version "7.9.6"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
@@ -645,6 +652,13 @@ final-form@^4.19.1:
   integrity sha512-C4RldRCUs8YZod91ydtrsT+TOeG3fwU4ip9oBDXhvbWdQ6iXl4cIrTAQkqpWijbnI3XFVA0akV7YTjSFJMJ2uw==
   dependencies:
     "@babel/runtime" "^7.8.3"
+
+final-form@^4.20.1:
+  version "4.20.1"
+  resolved "https://registry.yarnpkg.com/final-form/-/final-form-4.20.1.tgz#525a7f7f27f55c28d8994b157b24d6104fc560e9"
+  integrity sha512-IIsOK3JRxJrN72OBj7vFWZxtGt3xc1bYwJVPchjVWmDol9DlzMSAOPB+vwe75TUYsw1JaH0fTQnIgwSQZQ9Acg==
+  dependencies:
+    "@babel/runtime" "^7.10.0"
 
 find-cache-dir@^2.1.0:
   version "2.1.0"
@@ -1321,6 +1335,14 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
+svelte-final-form-stores@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/svelte-final-form-stores/-/svelte-final-form-stores-1.0.0.tgz#e3d5085abc45e3f4d08360d93aefe499e24354ef"
+  integrity sha512-LXSMMueO9pe7zylRjy5oZe9+3NqeuRdynOzAv5DO4mp9HadgFaYcrGvTGkQau/YL/+/Zkeb6LYs4SSQQb0JTHg==
+  dependencies:
+    final-form "^4.20.1"
+    svelte "^3.31.0"
+
 svelte-preprocess@^4.6.1:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/svelte-preprocess/-/svelte-preprocess-4.6.1.tgz#a7de4d91b32d5608b6637da960ee81e6089ae276"
@@ -1335,6 +1357,11 @@ svelte@^3.29.7:
   version "3.29.7"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.29.7.tgz#e254eb2d0d609ce0fd60f052d444ac4a66d90f7d"
   integrity sha512-rx0g311kBODvEWUU01DFBUl3MJuJven04bvTVFUG/w0On/wuj0PajQY/QlXcJndFxG+W1s8iXKaB418tdHWc3A==
+
+svelte@^3.31.0:
+  version "3.31.0"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.31.0.tgz#13966e5f55b975bc86675469bb2c58dd0e558d97"
+  integrity sha512-r+n8UJkDqoQm1b+3tA3Lh6mHXKpcfOSOuEuIo5gE2W9wQYi64RYX/qE6CZBDDsP/H4M+N426JwY7XGH4xASvGQ==
 
 table@^5.2.3:
   version "5.4.6"

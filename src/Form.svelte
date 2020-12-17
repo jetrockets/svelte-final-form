@@ -5,16 +5,14 @@
 
 <script>
   import { setContext } from "svelte";
-
-  import {readableForm} from './store/readableForm';
-  import { readableFormState } from "./store/readableFormState";
+  import { readableForm, readableFormState } from "svelte-final-form-stores";
 
   export let subscription;
   export let initialValues;
   export let initialValuesEqual;
   export let formStore = readableForm({ initialValues, ...$$restProps }, initialValuesEqual);
 
-  const formStateStore = readableFormState(subscription, $formStore);
+  const formStateStore = readableFormState($formStore, subscription);
 
   setContext(FORM_STORE, formStore);
   setContext(FORM, $formStore);
