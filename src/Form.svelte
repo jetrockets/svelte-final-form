@@ -1,43 +1,25 @@
 <script context="module">
   export const FORM = {};
+  export const FORM_STORE = {};
 </script>
 
 <script>
-  import { onDestroy, onMount, setContext } from "svelte";
-  import { createForm } from "final-form";
+  import { setContext } from "svelte";
 
-  import whenValueChanges from "./whenValueChanges";
-  import shallowEqual from "./shallowEqual";
-  import { getFormSubscriptionItems } from "./getFormSubscriptions";
+  import {readableForm} from './store/readableForm';
+  import { readableFormState } from "./store/readableFormState";
 
-  export let subscription = getFormSubscriptionItems();
+  export let subscription;
   export let initialValues;
   export let initialValuesEqual;
 
-  let state = {};
-  let unsubscribe;
+  const formStore = readableForm({ initialValues, ...$$restProps }, initialValuesEqual);
+  const formStateStore = readableFormState(subscription, $formStore);
 
-  const form = createForm({ initialValues, ...$$restProps });
+  setContext(FORM_STORE, formStore);
+  setContext(FORM, $formStore);
 
-  setContext(FORM, form);
-
-  onMount(() => {
-    unsubscribe = form.subscribe((newState) => {
-      state = newState;
-    }, subscription);
-  });
-
-  onDestroy(() => {
-    unsubscribe && unsubscribe();
-  });
-
-  const whenInitialValuesChanges = whenValueChanges(
-    initialValues,
-    () => form.setConfig("initialValues", initialValues),
-    initialValuesEqual || shallowEqual,
-  );
-
-  $: whenInitialValuesChanges(initialValues);
+  $: formStore.setInitialValues(initialValues);
 </script>
 
-<slot {form} {state} />
+<slot form={$formStore} state={$formStateStore} />
