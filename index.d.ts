@@ -6,12 +6,13 @@ export class Form<T extends object = any> extends SvelteComponent {
     onSubmit: (vals: T) => void | Promise<void>;
     subscription?: FormSubscription;
     initialValues?: Partial<T>;
+    initialValuesEqual?: boolean;
     keepDirtyOnReinitialize?: boolean;
   };
 }
 
 export class Field extends SvelteComponent {
-  $$prop_def: { name: string; subscription?: FieldSubscription };
+  $$prop_def: { name: string; subscription?: FieldSubscription; validate?: Function };
 }
 
 /*

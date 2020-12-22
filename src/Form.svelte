@@ -12,7 +12,7 @@
 
   export let subscription = getFormSubscriptionItems();
   export let initialValues;
-  export let initialValuesEqual;
+  export let initialValuesEqual = false;
 
   let state = {};
   let unsubscribe;
