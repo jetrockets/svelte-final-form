@@ -8,7 +8,7 @@ export class Form<T extends object = any> extends SvelteComponent {
     initialValues?: Partial<T>;
     initialValuesEqual?: boolean;
     keepDirtyOnReinitialize?: boolean;
-    validate: (vals: T) => T;
+    validate?: (vals: T) => T;
   };
 }
 
@@ -26,5 +26,6 @@ export class FormSpy<T extends object = any> extends SvelteComponent {
   $$prop_def: {
     subscription?: FormSubscription;
     onChange?: (formState: FormState<T>) => void;
+    validate?: (value: any) => any;
   };
 }
