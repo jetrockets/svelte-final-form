@@ -8,6 +8,7 @@ export class Form<T extends object = any> extends SvelteComponent {
     initialValues?: Partial<T>;
     initialValuesEqual?: boolean;
     keepDirtyOnReinitialize?: boolean;
+    validate: (vals: T) => T;
   };
 }
 
