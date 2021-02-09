@@ -9,7 +9,7 @@
 
   export let subscription;
   export let initialValues;
-  export let initialValuesEqual;
+  export let initialValuesEqual = false;
   export let formStore = readableForm({ initialValues, ...$$restProps }, initialValuesEqual);
 
   const formStateStore = readableFormState($formStore, subscription);
